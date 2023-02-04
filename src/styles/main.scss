@@ -1,0 +1,109 @@
+@use 'variaveis';
+@use 'hero';
+@use 'faq';
+@use 'elenco';
+@use 'header';
+@use 'footer';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Avenir, sans-serif;
+    list-style: none;
+    font-family: 'Inconsolata', monospace;
+}
+
+body {
+    background-color: variaveis.$bgColor;
+}
+
+@mixin text($fontSize: 24px) {
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: variaveis.$corTxtMain;
+    font-weight: bold;
+}
+
+@mixin title($fontSize: 40px) {
+    @include text($fontSize);
+    color: variaveis.$corTxtSec;
+}
+
+.text--big {
+    @include text(18px);
+
+    @media (max-width:768px){
+        @include text(15px)
+    }
+}
+
+.text {
+    @include text;
+
+    @media (max-width:768px){
+        @include text(14px)
+    }
+}
+
+.text--small {
+    @include text(12px);
+
+    @media (max-width:768px){
+        @include text(11px)
+    }
+}
+
+.title--big {
+    @include title(44px);
+
+    @media (max-width:768px){
+        @include title(26px)
+    }
+}
+
+.title {
+    @include title;
+
+    @media (max-width:768px){
+        @include title(24px)
+    }
+}
+
+.title--small {
+    @include title(24px);
+
+    @media (max-width:768px){
+        @include title(22px)
+    }
+}
+
+.image-text-section {
+    padding: 5.6vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    text-align: justify;
+
+    @media (max-width:768px) {
+        display: block;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+
+    &__text__container {
+        padding: 0 2vw;
+
+        h2 {
+            margin-bottom: 24px;
+        }
+
+        p {
+            padding: 8px;
+        }
+
+    }
+}

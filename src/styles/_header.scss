@@ -1,0 +1,23 @@
+@use 'variaveis';
+
+.header {
+    background-color: variaveis.$bgColor;
+    padding: 1vw;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 200px;
+            height: 160px;
+        }
+
+        h1 {
+            color: variaveis.$corTxtMain;
+            margin-right: 24px;
+            font-family: 'Aboreto', cursive;
+        }
+    }
+}
